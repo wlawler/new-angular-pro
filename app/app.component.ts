@@ -1,25 +1,28 @@
-import { Component } from '@angular/core';
+import { Component, ViewContainerRef, ViewChild, AfterContentInit, ComponentFactoryResolver } from '@angular/core';
+
+import { AuthFormComponent } from './auth-form/auth-form.component';
 
 import { User } from './auth-form/auth-form.interface';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html'
+  templateUrl: `./app.component.html  `
 })
-export class AppComponent {
+export class AppComponent implements AfterContentInit {
 
-  rememberMe: boolean= false ;
+  @ViewChild('entry', { read: ViewContainerRef }) entry: ViewContainerRef;
 
-  rememberUser(remember:boolean) {
-    this.rememberMe = remember;
-  }
+  constructor(
+    private resolver: ComponentFactoryResolver
+  ) {}
 
-  createUser(user: User) {
-    console.log('Create account', user);
+  ngAfterContentInit() {
+    const authFormFactory = this.resolver.resolveComponentFactory(AuthFormComponent);
+    const component = this.entry.createComponent(authFormFactory);
   }
 
   loginUser(user: User) {
-    console.log('Login', user, this.rememberMe);
+    console.log('Login', user);
   }
 
 }
