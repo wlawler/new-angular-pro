@@ -10,7 +10,8 @@
       <input
         type="email"
         name="email"
-        ngModel
+        ngModel 
+        #email
       >
     </label>
     <label>
@@ -25,15 +26,6 @@
    <auth-message
     [style.display]="(showMessage ? 'inherit':'none')">
   </auth-message> 
-  <auth-message
-  [style.display]="(showMessage ? 'inherit':'none')">
-</auth-message> 
-<auth-message
-[style.display]="(showMessage ? 'inherit':'none')">
-</auth-message> 
-
-
-
-    <ng-content select="button"></ng-content>
+      <ng-content select="button"></ng-content>
   </form>
 </div>
