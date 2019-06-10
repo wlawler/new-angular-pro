@@ -6,6 +6,7 @@ import { User } from './auth-form.interface';
 
 @Component({
     selector: 'auth-form',
+    styleUrls:['./auth-form.css'],
     templateUrl: './auth-form.html'
 })
 export class AuthFormComponent implements AfterContentInit, AfterViewInit {
@@ -22,7 +23,9 @@ export class AuthFormComponent implements AfterContentInit, AfterViewInit {
     constructor(private cd: ChangeDetectorRef) {}
 
     ngAfterViewInit(){
-        console.log(this.email);
+        this.email.nativeElement.setAttribute('placeholder','Enter your email address');
+        this.email.nativeElement.classLists.add('email');
+        this.email.nativeElement.focus();
         if (this.message) {              
             this.message.forEach((message) => {
             message.days = 30;
