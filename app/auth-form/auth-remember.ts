@@ -2,7 +2,11 @@ import { Component, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'auth-remember',
-  templateUrl: "./auth-remember.html"
+  template: `
+  <div>
+    <div #entry></div>
+  </div>
+`
   
   
 })
