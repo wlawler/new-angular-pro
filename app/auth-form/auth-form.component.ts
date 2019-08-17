@@ -1,8 +1,9 @@
 import { User } from './auth-form.interface';
+import {Component, Output, EventEmitter} from '@angular/core';
 
 @Component({
   selector: 'auth-form',
-  templateURL: ./auth-form.html,
+  templateUrl: "../auth-form.html",
   
 })
 export class AuthFormComponent {
