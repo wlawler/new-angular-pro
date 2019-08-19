@@ -3,7 +3,7 @@ import {Component, Output, EventEmitter} from '@angular/core';
 
 @Component({
   selector: 'auth-form',
-  templateUrl: "../auth-form.html",
+  templateUrl: "./auth-form.html",
   
 })
 export class AuthFormComponent {
