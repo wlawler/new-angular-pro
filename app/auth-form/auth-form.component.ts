@@ -4,8 +4,14 @@ import {AuthRememberComponent} from './auth-remember';
 import {AuthMessageComponent } from "./auth-message";
 import { Message } from '@angular/compiler/src/i18n/i18n_ast';
 @Component({
-  selector: 'auth-form',
+  selector: 'auth-form' ,
   templateUrl: "./auth-form.html",
+  styleUrls:[`
+  .email {  border-color: #9f72e6;}
+  
+  `],
+
+  
   
 })
 export class AuthFormComponent implements AfterContentInit, AfterViewInit {
@@ -36,7 +42,9 @@ export class AuthFormComponent implements AfterContentInit, AfterViewInit {
 
   ngAfterContentInit() {
 
-    console.log(this.email);
+    this.email.nativeElement.setAttribute('placeholder','Enter your email address');
+    this.email.nativeElement.classList.add('email');
+    this.email.nativeElement.focus();
  
  if (this.remember){
    this.remember.forEach((item) => {
