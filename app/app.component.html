@@ -1,9 +1,9 @@
 <div>
-    
-  <ng-container
-  [ngTemplateOutlet]="tmpl"></ng-container>
-  <template #tmpl >
-
-    Wes Lawler: Louisville, KY
-  </template>
+    <ng-container
+        [ngTemplateOutlet]="tmpl"
+        [ngTemplateOutletContext]="{CTX}">
+      </ng-container>
+      <template>
+        {{ name }} : {{ location }}
+      </template>
 </div>
