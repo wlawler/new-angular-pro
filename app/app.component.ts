@@ -13,9 +13,6 @@ import { User } from './auth-form/auth-form.interface';
 
 
 export class AppComponent  {
-CTX = {
-  $implicit: 'Wes Lawler',
-  location: 'Louisville,Kentucky'
-};
+
 }
 
