@@ -12,29 +12,7 @@ import { User } from './auth-form/auth-form.interface';
 })
 
 
-export class AppComponent implements AfterContentInit {
-
-  component: ComponentRef<AuthFormComponent>;
-
-  @ViewChild('entry', { read: ViewContainerRef }) entry: ViewContainerRef;
-
-  @ViewChild('tmpl')  tmpl: TemplateRef<any>;
-  constructor(
-    private resolver: ComponentFactoryResolver
-  ) {}
-
-  ngAfterContentInit() {
-
-  this.entry.createEmbeddedView(this.tmpl,{
-    $implicit: 'Lawler,Wes',
-    location: 'KY, Louisville'
-  });
-  }
-
-
-  loginUser(user: User) {
-    console.log('Login', user);
-  }
+export class AppComponent  {
 
 }
 

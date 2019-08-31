@@ -1,8 +1,9 @@
 <div>
     
-  <div #entry></div>
-  <template #tmpl let-name let-location="location">
+  <ng-container
+  [ngTemplateOutlet]="tmpl"></ng-container>
+  <template #tmpl >
 
-    {{name}}: {{location}}
+    Wes Lawler: Louisville, KY
   </template>
 </div>
