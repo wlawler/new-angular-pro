@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, FormArray } from '@angular/forms';
-import { Product} from '../../models/products.interface';
+import { Product } from '../../models/products.interface';
 
 
 @Component({
@@ -36,13 +36,13 @@ import { Product} from '../../models/products.interface';
 })
 export class StockInventoryComponent {
 
-  products: Product[] =[
-    {"id": 1, "price": 2800, "name": "mac book pro"},
-   { "id": 2, "price": 500, "name": "cd burner"},
-    {"id": 3, "price": 28000, "name": "new car"},
-   { "id": 4, "price": 280, "name": "your mom"},
-   { "id": 5, "price": 2805, "name": "your dad"},
-  
+  products: Product[] = [
+    { "id": 1, "price": 2800, "name": "mac book pro" },
+    { "id": 2, "price": 500, "name": "cd burner" },
+    { "id": 3, "price": 28000, "name": "new car" },
+    { "id": 4, "price": 280, "name": "your mom" },
+    { "id": 5, "price": 2805, "name": "your dad" },
+
   ];
   form = new FormGroup({
     store: new FormGroup({

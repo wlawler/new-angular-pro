@@ -12,8 +12,8 @@ import { Product } from '../../models/products.interface';
            <option value=""> Select Stock</option>
            <option
            *ngFor="let products of products"
-           [value]="product.id">
-           {{product.name}}
+           [value]="products.id">
+           {{products.name}}
 
            </option>
         </select>
@@ -23,7 +23,7 @@ import { Product } from '../../models/products.interface';
         min="10"
         max="1000"
         formControlName="quantity">
-        <button type="button>
+        <button type="button">
           add stock
         </button>
 
