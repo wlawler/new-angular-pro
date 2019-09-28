@@ -58,7 +58,7 @@ export class StockInventoryComponent {
   })
   createStock(stock) {
     return new FormGroup ({
-      product_id: new FormControl(stock.product_id ||''),
+      product_id: new FormControl(parseInt( stock.product_id, 10) ||''),
       quantity: new FormControl(stock.quantity || 10)
     });
   }
