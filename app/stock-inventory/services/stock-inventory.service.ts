@@ -17,7 +17,7 @@ export class StockInventoryService {
     getCartItems(): Observable<Item[]> {
         return this.http
             .get('/api/cart')
-            .map((response: Response) => response.json)
+            .map((response: Response) => response.json())
             .catch((error: any) => Observable.throw(error.json()));
     }
     getProducts(): Observable<Product[]> {

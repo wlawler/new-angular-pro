@@ -13,15 +13,18 @@ import { Product, Item } from '../../models/products.interface';
     <div class="stock-inventory">
     <form [formGroup]="form" (ngSubmit)="onSubmit()">
     <stock-branch
-    [parent]="form"></stock-branch>
+    [parent]="form">
+    </stock-branch>
     <stock-selector
     [parent]="form"
     [products]="products"
-    (added)="addStock($event)"></stock-selector> 
+    (added)="addStock($event)">
+    </stock-selector> 
     <stock-products
     [parent]="form"
     [map]="productMap"
-    (removed)="removeStock($event)"></stock-products>
+    (removed)="removeStock($event)">
+    </stock-products>
 
     
 

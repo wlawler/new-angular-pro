@@ -21,7 +21,7 @@ import { Product } from '../../models/products.interface';
           </div>
            
            <input 
-           type="number")
+           type="number"
            step="10"
            min="10"
            max="1000"
