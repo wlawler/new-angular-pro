@@ -81,6 +81,7 @@ export class StockInventoryComponent implements OnInit {
           this.productMap = new Map<number, Product>(myMap);
           this.products = products; 
           cart.forEach(item => this.addStock(item));
+          this.calculateTotal(this.form.get('stock').value);
           this.form.get('stock')
            .valueChanges.subscribe(value => this.calculateTotal(value));
         });
