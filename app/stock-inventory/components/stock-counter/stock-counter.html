@@ -1,6 +1,9 @@
 <div class="stock-counter">
     <div>
-        <div>
+        <div
+        (keydown)="onKeyDown($event)"
+        (blur)="blur($event)"
+        (focus)="onFocus($event)">
             <p>
                 {{value}}
 
