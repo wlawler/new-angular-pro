@@ -4,6 +4,7 @@ import { Observable} from 'rxjs/Observable';
 import 'rxjs/add/observable/forkJoin';
 import {StockInventoryService} from '../../services/stock-inventory.service';
 import { Product, Item } from '../../models/products.interface';
+import { StockValidators} from './stock-inventory.validators';
 
 
 @Component({
@@ -54,7 +55,7 @@ export class StockInventoryComponent implements OnInit {
   productMap: Map<number, Product>;
   form = this.fb.group({
     store: this.fb.group({
-      branch: ['', Validators.required],
+      branch: ['', [Validators.required, StockValidators.checkBranch]],
       code: ['', Validators.required]
     }),
     selector: this.createStock({}),
