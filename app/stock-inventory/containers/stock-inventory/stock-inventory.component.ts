@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, FormArray, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, FormArray, Validators, AbstractControl } from '@angular/forms';
 import { Observable} from 'rxjs/Observable';
 import 'rxjs/add/observable/forkJoin';
 import {StockInventoryService} from '../../services/stock-inventory.service';
@@ -55,7 +55,7 @@ export class StockInventoryComponent implements OnInit {
   productMap: Map<number, Product>;
   form = this.fb.group({
     store: this.fb.group({
-      branch: ['', [Validators.required, StockValidators.checkBranch]],
+      branch: ['', [Validators.required, StockValidators.checkBranch],[this.validateBranch.bind(this)]],
       code: ['', Validators.required]
     }),
     selector: this.createStock({}),
@@ -87,7 +87,14 @@ export class StockInventoryComponent implements OnInit {
            .valueChanges.subscribe(value => this.calculateTotal(value));
         });
   }
+  validateBranch(control: AbstractControl) {
+    return this.stockService
+      .checkBranchId(control.value)
+      .map((response: boolean) => {
+      return response ? null : { unknownBranch: true }
+      });
 
+  }
   calculateTotal(value: Item[]) {
       const total = value.reduce((prev , next) => {
         return prev + (next.quantity * this.productMap.get(next.product_id).price);
