@@ -35,7 +35,7 @@ import { StockValidators} from './stock-inventory.validators';
       <button 
         type="submit"
         [disabled]="form.invalid">
-        Order stock
+        Order stocks
       </button>
     </div>
 
