@@ -9,11 +9,5 @@ import 'rxjs/add/operator/filter';
 })
 export class AppComponent implements OnInit {
   constructor(private router: Router) {}
-  ngOnInit() {
-    this.router.events
-    .filter(event => event instanceof NavigationEnd)
-    .subscribe(event => {
-     console.log(event);
-    });
-  }
+  ngOnInit() {}
 }
