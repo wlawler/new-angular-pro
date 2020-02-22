@@ -5,9 +5,11 @@ import { HttpModule } from '@angular/http';
 
 import { MailModule } from './mail/mail.module';
 
+
 import { AppComponent } from './app.component';
 
 export const ROUTES: Routes = [
+  { path: 'dashboard', loadChildren: './dashboard/dashboard.module#DashboardModule' },
   { path: '**', redirectTo: 'folder/inbox' }
 ];
 
@@ -19,6 +21,7 @@ export const ROUTES: Routes = [
     BrowserModule,
     HttpModule,
     MailModule,
+  
     RouterModule.forRoot(ROUTES)
   ],
   bootstrap: [
